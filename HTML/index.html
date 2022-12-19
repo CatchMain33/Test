@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>캐치테이블 관리자</title>
+
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png" /> 
+	<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" /> 
+	<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.css"/>
+	<link href="css/helper.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+
+</head>
+<style>
+
+</style>
+<body>
+	<!-- 왼쪽 상단 -->	
+	<header class="top-bar">
+		<a class="mobile-nav" href="#"><i class="pe-7s-menu"></i></a>
+		<div class="main-logo"><a href="index.html">캐치테이블 <span>관리자</span></a></div>
+		<input type="checkbox" id="s-logo" class="sw" />
+		<!-- 상단 프로필 -->
+		<ul class="profile">
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="return false;" class="profile__user">
+					<figure class="pull-left rounded-image profile__img">
+						<img class="media-object" src="images/thumb0.jpg" alt="user">
+					</figure>
+					<span class="profile__name">
+						대표 <span>전지혜</span> <i class="pe-7s-angle-down"></i>
+					</span>
+				</a>
+				<!-- 상단 드롭다운 메뉴 -->
+				<ul class="dropdown-menu pull-right">
+					<li><a href="#"><i class="icon pe-7s-date pe-fw"></i> My Calendar</a></li>
+					<li><a href="login.html"><i class="icon pe-7s-close-circle pe-fw"></i> Log Out</a></li>
+				</ul>
+			</li>
+			<li class="profile--higlighted">
+				<span class="badge profile__badge badge--red">8</span>
+				<a class="dropdown-toggle" data-toggle="dropdown" onclick="return false;" href="#">
+					<i class="pe-7f-mail"></i>
+				</a>
+				<ul class="dropdown-menu pull-right">
+					<li><a href="#"><i class="icon pe-7s-mail"></i>식당으로부터 8개의 메세지가 왔습니다.</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="pe-7f-config"></i>
+				</a>
+			</li>
+		</ul>
+
+	</header> <!-- /top-bar -->
+	
+	<div class="wrapper">
+<!-- 왼쪽 메뉴 사이드바 -->
+		<aside class="sidebar">
+			<ul class="main-nav">
+				<li class="main-nav--active">
+					<a class="main-nav__link" href="index.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-home"></i></span>
+						HOME <span class="badge main-nav__badge badge--red">8</span>
+					</a>
+				</li>
+				<!-- 사이드바 메뉴 -->
+				<li class="main-nav--link">
+					<a class="main-nav__link" href="user.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-menu"></i></span>
+						회원
+					</a>
+				</li>
+				<li class="main-nav--collapsible">
+					<a class="main-nav__link" href="owner.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-photo-gallery"></i></span>
+						식당 오너
+					</a>
+					<ul class="main-nav__submenu">
+						<li><a href="new_owner.html"><i class="pe-7s-help1"></i><span>입점 문의</span></a></li>
+						<li><a href="owner.html"><i class="pe-7s-note"></i><span>조회 및 관리</span></a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="main-nav__link" href="review.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-crop"></i></span>
+						리뷰
+					</a>
+				</li>
+				<li class="main-nav--collapsible">
+					<a class="main-nav__link" href="notice.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-photo-gallery"></i></span>
+						고객센터
+					</a>
+					<ul class="main-nav__submenu">
+						<li><a href="notice.html"><i class="pe-7s-help1"></i><span>공지사항</span></a></li>
+						<li><a href="service_center.html"><i class="pe-7s-note"></i><span>문의 및 개선 사항</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside> <!-- /메뉴 사이드바 -->
+
+		
+		<!-- 메인 컨텐츠 헤더 -->
+		<section class="content">
+			<header class="main-header clearfix">
+				<h1 class="main-header__title">
+					<i class="icon pe-7s-home"></i>
+					HOME <small>Statistics and more</small>
+				</h1>
+				<div class="main-header__date">
+					<i class="icon pe-7s-date"></i>
+					<span>2022.12.17</span>
+					<i class="pe-7s-angle-down-circle"></i>
+				</div>
+			</header> <!--헤더 끝-->
+			
+			<!-- 1번째 컨텐츠 -->
+			<div class="main-stats row">
+				<div class="main-stats__stat col-lg-3 col-md-12 col-sm-12">
+					<div class="widget__config">
+						<a href="#"><i class="pe-7f-refresh"></i></a>
+					</div>
+					<h3 class="stat__title">Total Users</h3>
+					<div class="stat__number"><span></span> 124,057</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar--skyblue" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+					</div> <!-- /progress -->
+					<p class="stat__details">
+						<i class="icon pe-7s-angle-up color--skyblue"></i>
+						<strong>27%</strong> more than last month
+					</p>
+				</div> <!-- /col -->
+				
+				<div class="main-stats__stat col-lg-3 col-md-12 col-sm-12">
+					<div class="widget__config">
+						<a href="#"><i class="pe-7f-refresh"></i></a>
+					</div>
+					<h3 class="stat__title">New Users</h3>
+					<div class="stat__number"><span></span> 7,068</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar--anzac" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
+					</div> <!-- /progress -->
+					<p class="stat__details">
+						<i class="icon pe-7s-angle-down color--anzac"></i>
+						<strong>15%</strong> less than last month
+					</p>
+				</div> <!-- /col -->
+
+				<div class="main-stats__stat col-lg-3 col-md-12 col-sm-12">
+					<div class="widget__config">
+						<a href="#"><i class="pe-7f-refresh"></i></a>
+					</div>
+					<h3 class="stat__title">Total Restaurant</h3>
+					<div class="stat__number"><span></span> 124,057</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar--green" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+					</div> <!-- /progress -->
+					<p class="stat__details">
+						<i class="icon pe-7s-angle-up color--green"></i>
+						<strong>38%</strong> more than last month
+					</p>
+				</div> <!-- /col -->
+
+				<div class="main-stats__stat col-lg-3 col-md-12 col-sm-12">
+					<div class="widget__config">
+						<a href="#"><i class="pe-7f-refresh"></i></a>
+					</div>
+					<h3 class="stat__title">New Restaurant</h3>
+					<div class="stat__number"><span></span> 2,407</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar--red" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+					</div> <!-- /progress -->
+					<p class="stat__details">
+						<i class="icon pe-7s-angle-down color--red"></i>
+						<strong>23%</strong> less than last month
+					</p>
+				</div> <!-- /col -->
+			</div> <!-- row -->
+			<!-- 메인 상단 회원,식당 수 끝-->
+
+			<!-- chart -->
+			<div class="row">
+				<div class="col-md-7">
+					<article class="widget">
+						<header class="widget__header">
+							<h3 class="widget__title">월별 총 예약 현황</h3>
+						</header>
+						<div class="widget__content">
+							<div class="row">
+								<div class="card-body">
+                                    <div style="height:400px;"class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>	
+							</div> 
+						</div>
+					</article>
+				</div>
+			 <!-- /예약 현황 끝 -->
+			<!--식당별 rank-->
+				<div class="col-md-5">
+					<article class="widget">
+						<header class="widget__header">
+							<h3 class="widget__title">식당 순위</h3>
+						</header>
+						<div class="widget__content">
+							<img style="width:400px; height:400px;"src="./images/rank.png">
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<div class="row">	<!--리뷰 간략히-->
+				<div class="col-md-7">
+					<article class="widget widget--tabbed">
+						<div class="tabs">
+							<div class="number-entries">
+								<input class="spinner" name="value" value="3" />
+							</div>
+							<input type="radio" name="t" id="tab1" checked>
+							<label for="tab1" class="tabs__tab">전체 리뷰</label>
+							<input type="radio" name="t" id="tab2">
+							<label for="tab2" class="tabs__tab">신고 들어온 리뷰</label>
+							<input type="radio" name="t" id="tab3">
+							<label for="tab3" class="tabs__tab">신고 들어온 댓글</label>
+							<div class="tabs__content">
+								<!-- 전체 리뷰 -->
+								<div class="tabs__content--1">
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">apple(김사과)<span>from</span> <span>스시소요</span></h4>
+											<p class="social_msg__msg">음식도 맛있고, 가격도 저렴해요!</p>
+											<small class="social_msg__meta">2022.12.14</small>
+										</div>
+									</div> 
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">melon(이메론) <span>from</span> <span> 키친마이야르</span> <i class="pe-7s-link"></i></h4>
+											<p class="social_msg__msg">가성비 오져요</p>
+											<hr>
+											<p class="social_msg__meta--alt">Attachment</p>
+											<div class="media attachment_msg">
+												<figure class="pull-left">
+													<img class="media-object" src="images/thu.png" alt="user">
+												</figure>
+												<div class="media-body msg_attach">
+													<p class="social_msg__msg attach_name">Image-sample.jpg</p>
+													<p class="attach_kb">560 KB</p>
+													<a href="#" class="attach_links">View</a><a href="#" class="attach_links">Download</a>
+												</div>
+											</div> <!-- /Attachment -->
+											<small class="social_msg__meta">2022.12.14</small>
+										</div>
+									</div> <!-- /social-msg -->
+									<div class="social_msg__reply">
+										<input type="text" placeholder="리뷰 더보기">
+									</div>
+
+								</div> <!-- /전체 리뷰끝 -->
+
+								<!-- 신고들어온 리뷰 -->
+								<div class="tabs__content--2">
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">orange(오렌진) <span>from</span> <span>갓.</span></h4>
+											<p class="social_msg__msg">(비속어 사용) 웨이팅도 길고, 맛도없음</p>
+											<hr>
+											<p class="social_msg__meta--alt">2022.12.13</p>
+											<div class="media">
+												<figure class="pull-left">
+													<img class="media-object" src="images/thu.png" alt="user">
+												</figure>
+												<div class="media-body msg_attach">
+													<p class="social_msg__msg attach_name">Image-sample.jpg</p>
+													<p class="attach_kb">560 KB</p>
+													<a href="#" class="attach_links">View</a><a href="#" class="attach_links">Download</a>
+												</div>
+											</div> <!-- /Attachment -->
+											<small class="social_msg__meta">2022.12.12</small>
+										</div>
+									</div> <!-- /social-msg -->
+									<div class="social_msg__reply">
+										<input type="text" placeholder="Click here to Reply...">
+									</div>
+								</div> <!-- /신고 들어온 리뷰 끝-->
+
+								<!-- 신고 들어온 댓글 시작 -->
+								<div class="tabs__content--3">
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">berry(배애리) </h4><span>from</span> <span>apple(김사과)님의 2번쨰 후기</span></h4>
+											<p class="social_msg__msg">마 누가 리뷰를 이따구로 쓰나!!!</p>
+											<small class="social_msg__meta">2022.12.13 12:00:12</small>
+										</div>
+									</div> <!-- /social-msg -->
+									<div class="social_msg__reply">
+										<input type="text" placeholder="Click here to Reply...">
+									</div>
+								</div> <!-- /신고 들어온 댓글 끝 -->
+								
+							</div> <!-- /tabs__content CONTAINER -->
+
+						</div> <!-- /widget__tabs -->
+
+					</article>
+				</div>
+
+
+				<div class="col-md-5">  <!--유저 간략히-->
+					<article class="widget no-padding--lr">
+						<header class="widget__header">
+							<h3 class="widget__title">Total users / <span>184,036</span></h3>
+							<div class="widget__config">
+								<div class="dropdown">
+									<select name="one" class="dropdown-select">
+										<option value="">Sort by</option>
+										<option value="1">이름순</option>
+										<option value="2">예약순</option>
+										<option value="3">가입순</option>
+									</select>
+								</div>
+							</div>
+						</header>
+						<div class="widget__content">
+							<div class="media user user--added">
+								<figure class="pull-left rounded-image user__img">
+									<img class="media-object" src="images/thumb3.jpg" alt="user">
+								</figure>
+								<div class="media-body">
+									<h4 class="media-heading user__name">apple (김사과)</h4>
+									<small class="user__location"><i class="pe-7f-map-marker"></i> 서울시 강남구</small>
+
+									<a class="c-btn--check"></a>
+									<input type="checkbox" class="btn-more-check" id="more1">
+									<label class="c-btn--more" for="more1"></label>
+
+									<div class="accordion__details">
+										<p>핸드폰 번호 <span><a href="#">010-1111-1111</a></span></p>
+										<p>포인트<span><a class="color--dark-grey" href="#">0</a></span></p>
+										<p>고객 유의사항 <span>진상 기질있음</span></p>
+										<p>관리자 메모<span class="btn-badge bg--orange">신고 두번 들어옴</span></p>
+									</div>
+								</div>
+							</div> <!-- /user -->
+
+							<div class="media user">
+								<figure class="pull-left rounded-image user__img">
+									<img class="media-object" src="images/thumb4.jpg" alt="user">
+								</figure>
+								<div class="media-body">
+									<h4 class="media-heading user__name">banana (반하나)</h4>
+									<small class="user__location"><i class="pe-7f-map-marker"></i>서울시 서초구</small>
+
+									<a class="c-btn--check"></a>
+									<input type="checkbox" class="btn-more-check" id="more2">
+									<label class="c-btn--more" for="more2"></label>
+
+									<div class="accordion__details">
+										<p>핸드폰 번호 <span><a href="#">010-2222-2222</a></span></p>
+										<p>포인트 <span><a class="color--dark-grey" href="#">10000</a></span></p>
+										<p>고객 유의사항 <span>후기 많이 남김</span></p>
+										<p>관리자 메모 <span class="btn-badge bg--skyblue">포인트왕</span></p>
+									</div>
+								</div>
+							</div> <!-- /user -->
+
+							<div class="media user user--added">
+								<figure class="pull-left rounded-image user__img">
+									<img class="media-object" src="images/thumb5.jpg" alt="user">
+								</figure>
+								<div class="media-body">
+									<h4 class="media-heading user__name">orange(오렌지)</h4>
+									<small class="user__location"><i class="pe-7f-map-marker"></i>강원도 삼척시</small>
+
+									<a class="c-btn--check"></a>
+									<input type="checkbox" class="btn-more-check" id="more3" checked>
+									<label class="c-btn--more" for="more3"></label>
+
+									<div class="accordion__details">
+										<p>핸드폰 번호 <span><a href="#">010-3333-3333</a></span></p>
+										<p>포인트 <span><a class="color--dark-grey" href="#">200</a></span></p>
+										<p>고객 유의사항 <span></span></p>
+										<p>관리자 메모 <span class="btn-badge bg--skyblue">신규회원수준</span></p>
+									</div>
+								</div>
+
+							</div> <!-- /user -->
+
+							<div class="media user">
+								<figure class="pull-left rounded-image user__img">
+									<img class="media-object" src="images/thumb6.jpg" alt="user">
+								</figure>
+								<div class="media-body">
+									<h4 class="media-heading user__name">melon (이메론)</h4>
+									<small class="user__location"><i class="pe-7f-map-marker"></i>경기도 수원시</small>
+
+									<a class="c-btn--check"></a>
+									<input type="checkbox" class="btn-more-check" id="more4">
+									<label class="c-btn--more" for="more4"></label>
+									<div class="accordion__details">
+										<p>핸드폰 번호 <span><a href="#">010-4444-4444</a></span></p>
+										<p>포인트  <span><a class="color--dark-grey" href="#">5000</a></span></p>
+										<p>고객 유의사항 <span>노쇼 두번</span></p>
+										<p>관리자 메모 <span class="btn-badge bg--orange">노쇼 한번 더 추가시 블락</span></p>
+									</div>
+								</div>
+								
+							</div> <!-- /user -->
+							
+							<div class="user__more">
+								<a href="#" id="loadmore"><i class="pe-7s-plus"></i>회원 상세히 보기</a>
+							</div>
+							
+						</div> <!-- /user 끝 -->
+
+					</article>
+				</div>
+
+			</div> <!-- /row -->
+		</section>
+			
+			<footer class="main-footer">
+				<a class="back-top" href="#"><i class="pe-7s-angle-up-circle"></i></a>
+				<p>2013 © Levo by Pixeden.</p>
+			</footer>
+
+		</div> <!-- /wrapper -->
+
+		<!-- Page level plugins -->
+		<script src="vendor/chart.js/Chart.min.js"></script>
+    
+		<!-- Page level custom scripts -->
+		<script src="js copy/demo/chart-area-demo.js"></script>
+		<script src="js copy/demo/chart-pie-demo.js"></script>
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="amcharts/amcharts.js"></script>
+		<script type="text/javascript" src="amcharts/serial.js"></script>
+		<script type="text/javascript" src="amcharts/pie.js"></script>
+		<script type="text/javascript" src="js/chart.js"></script>
+		<script type="text/javascript" src="js/map.js"></script>
+		<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.min.js"></script>
+		<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-us-aea-en.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+
+	</body>
+	</html>

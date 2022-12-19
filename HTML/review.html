@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐치테이블 관리자_리뷰</title>
+    
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png" /> 
+	<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" /> 
+	<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.css"/>
+	<link href="css/helper.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/reviewLookUp.css" rel="stylesheet"/>
+	<link href="css/popup.css" rel="stylesheet"/>
+</head>
+<style>
+	.col-md-7 {
+		width:100%;
+	}
+	.search {
+		width: 200px;
+		height:35px;
+	}
+	
+	.memo {
+		width: 250px;
+		height: 50px;
+	}
+	.point {
+		width:150px;
+		height:30px;
+	}
+	.contents {
+		padding: 15px;
+	}
+
+</style>
+<body>
+    <header class="top-bar">
+		<a class="mobile-nav" href="#"><i class="pe-7s-menu"></i></a>
+		<div class="main-logo"><a href="index.html">캐치테이블 <span>관리자</span></a></div>
+		<input type="checkbox" id="s-logo" class="sw" />
+		<!-- 상단 프로필 -->
+		<ul class="profile">
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="return false;" class="profile__user">
+					<figure class="pull-left rounded-image profile__img">
+						<img class="media-object" src="images/thumb0.jpg" alt="user">
+					</figure>
+					<span class="profile__name">
+						대표 <span>전지혜</span> <i class="pe-7s-angle-down"></i>
+					</span>
+				</a>
+				<!-- 상단 드롭다운 메뉴 -->
+				<ul class="dropdown-menu pull-right">
+					<li><a href="#"><i class="icon pe-7s-date pe-fw"></i> My Calendar</a></li>
+					<li><a href="login.html"><i class="icon pe-7s-close-circle pe-fw"></i> Log Out</a></li>
+				</ul>
+			</li>
+			<li class="profile--higlighted">
+				<span class="badge profile__badge badge--red">8</span>
+				<a class="dropdown-toggle" data-toggle="dropdown" onclick="return false;" href="#">
+					<i class="pe-7f-mail"></i>
+				</a>
+				<ul class="dropdown-menu pull-right">
+					<li><a href="#"><i class="icon pe-7s-mail"></i>식당으로부터 8개의 메세지가 왔습니다.</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="pe-7f-config"></i>
+				</a>
+			</li>
+		</ul>
+
+	</header> <!-- /top-bar -->
+	
+	<div class="wrapper">
+        <!-- 왼쪽 메뉴 사이드바 -->
+		<aside class="sidebar">
+			<ul class="main-nav">
+				<li class="main-nav--link">
+					<a class="main-nav__link" href="index.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-home"></i></span>
+						HOME <span class="badge main-nav__badge badge--red">8</span>
+					</a>
+				</li>
+				<!-- 사이드바 메뉴 -->
+				<li class="main-nav--link">
+					<a class="main-nav__link" href="user.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-menu"></i></span>
+						회원
+					</a>
+				</li>
+				<li class="main-nav--collapsible">
+					<a class="main-nav__link" href="owner.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-photo-gallery"></i></span>
+						식당 오너
+					</a>
+					<ul class="main-nav__submenu">
+						<li><a href="new_owner.html"><i class="pe-7s-help1"></i><span>입점 문의</span></a></li>
+						<li><a href="owner.html"><i class="pe-7s-note"></i><span>조회 및 관리</span></a></li>
+					</ul>
+				</li>
+				<li class="main-nav--active">
+					<a class="main-nav__link" href="review.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-crop"></i></span>
+						리뷰
+					</a>
+				</li>
+				<li class="main-nav--collapsible">
+					<a class="main-nav__link" href="notice.html">
+						<span class="main-nav__icon"><i class="icon pe-7s-photo-gallery"></i></span>
+						고객센터
+					</a>
+					<ul class="main-nav__submenu">
+						<li><a href="notice.html"><i class="pe-7s-help1"></i><span>공지사항</span></a></li>
+						<li><a href="service_center.html"><i class="pe-7s-note"></i><span>문의 및 개선 사항</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside> <!-- /메뉴 사이드바 -->
+		
+        <section class="content">
+			<header class="main-header clearfix">
+				<h1 class="main-header__title">
+					<i class="icon pe-7s-home"></i>
+					리뷰 <small>조회 및 관리</small>
+				</h1>
+				<div class="main-header__date">
+					<form>
+						<input class="input-text search" type="text"> <button class="btn btn-skyblue">검색</button>
+					</form>
+				</div>
+			</header>
+			 <!--헤더 끝-->
+			<div class="row">	
+				<div class="col-md-7">
+					<article class="widget widget--tabbed">
+						<div class="tabs">
+							<div class="number-entries">
+								<input class="spinner" name="value" value="3" />
+							</div>
+							<input type="radio" name="t" id="tab1" checked>
+							<label for="tab1" class="tabs__tab">전체리뷰</label>
+							<input type="radio" name="t" id="tab2">
+							<label for="tab2" class="tabs__tab">신고 들어온 리뷰</label>
+							<input type="radio" name="t" id="tab3">
+							<label for="tab3" class="tabs__tab">신고 들어온 댓글</label>
+							<div class="tabs__content">
+								<!-- 전체 리뷰 -->
+								<div class="tabs__content--1">
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">apple(김사과)<span> from</span> <span>스시소요</span></h4>
+											<p class="social_msg__msg">음식도 맛있고, 가격도 저렴해요!</p>
+											<!-- 리뷰 별점 -->
+											<div class="__review-meta __review-meta--with-rating" style="width: 100%;">
+												<div class="__d-flex __v-center" style="justify-content: space-between;">
+												   <a href="#" class="__rating __active">4.8</a>
+												   <!-- <span class="__date">2일 전</span> -->
+												</div>
+												<div class="__rating-detail __d-flex">
+												   <div class="__item">맛 
+													  <span>5.0</span>
+												   </div>
+												   <div class="__item">분위기 
+													  <span>5.0</span>
+												   </div>
+												   <div class="__item">서비스 
+													  <span>4.5</span>
+												   </div>
+												</div>
+												<small class="social_msg__meta">2022.12.14</small>
+											 </div>
+										</div>
+									</div> <!-- /social-msg -->
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">melon(이메론) <span>from</span> <span> 키친마이야르</span> <i class="pe-7s-link"></i></h4>
+											<p class="social_msg__msg">가성비 오져요</p>
+										<!-- 리뷰 별점 -->
+										<div class="__review-meta __review-meta--with-rating" style="width: 100%;">
+											<div class="__d-flex __v-center" style="justify-content: space-between;">
+											   <a href="#" class="__rating __active">4.8</a>
+											   <!-- <span class="__date">2일 전</span> -->
+											</div>
+											<div class="__rating-detail __d-flex">
+											   <div class="__item">맛 
+												  <span>5.0</span>
+											   </div>
+											   <div class="__item">분위기 
+												  <span>5.0</span>
+											   </div>
+											   <div class="__item">서비스 
+												  <span>4.5</span>
+											   </div>
+											</div>
+											<small class="social_msg__meta">2022.12.14</small>
+										 </div>
+										</div>
+									</div> <!-- /social-msg -->
+									<div class="social_msg__reply">
+										<input type="text" placeholder="리뷰 더보기">
+									</div>
+
+								</div> <!-- /tabs__content 1 -->
+								<!-- 신고들어온 리뷰 -->
+								<div class="tabs__content--2">
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">orange(오렌진) <span>from</span> <span>갓.</span></h4>
+											<p class="social_msg__msg">(비속어 사용) 웨이팅도 길고, 맛도없음</p>
+											<small class="social_msg__meta">2022.12.12</small>
+											<div><button class="btn btn-skyblue" id="open">메세지 보내기</button><button class="btn btn-red">삭제</button></div>
+										</div>
+									</div> <!-- /social-msg -->
+								</div> <!-- 신고들어온 댓글-->
+								
+								<div class="tabs__content--3">
+									<div class="media social_msg">
+										<div class="media-body">
+											<h4 class="media-heading social_msg__heading">berry(배애리) </h4><span>from</span> <span>apple(김사과)님의 2번쨰 후기</span></h4>
+											<p class="social_msg__msg">마 누가 리뷰를 이따구로 쓰나!!!</p>
+											<small class="social_msg__meta">2022.12.13 12:00:12</small>
+											<div><button class="btn btn-skyblue" id="open">메세지 보내기</button><button class="btn btn-red">삭제</button></div>
+										</div>
+									</div> <!-- /social-msg -->
+								</div> <!-- /tabs__content 3 -->
+								
+							</div> <!-- /tabs__content CONTAINER -->
+
+						</div> <!-- /widget__tabs -->
+
+					</article>
+				</div>
+        </section>
+        <footer class="main-footer">
+            <a class="back-top" href="#"><i class="pe-7s-angle-up-circle"></i></a>
+            <p>2013 © Levo by Pixeden.</p>
+        </footer>
+
+    </div> <!-- /wrapper -->
+
+			<!-- 팝업창 -->
+			<div class="popup">
+				<div class="header"> 
+					신고들어온 리뷰
+				<img class="close-icon" src="./images/close.png">
+				</div>
+				<div class="widget__content contents">
+					<h3 class="widget__title">오렌진</h3> <span>(orange)</span>
+					<p>핸드폰 번호 : 010-2222-2222</p>
+					<p>리뷰 쓴 가게 : 갓.</p>
+					<div>
+					<form action="">
+						<p>신고 사유</p>
+						<input type="text" class="input-text memo" value="비속어 사용">
+					</form>
+					</div>
+					<div>
+					<form action="">
+						<p>고객 메세지</p>
+						<input type="text" class="input-text memo">
+						<button class="btn btn-skyblue">보내기</button>
+					</form>
+
+					</div>
+
+				</div>
+			</div>
+
+
+    
+    
+
+    <!-- Scripts -->
+	<script type="text/javascript" src ="js/popup.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="amcharts/amcharts.js"></script>
+    <script type="text/javascript" src="amcharts/serial.js"></script>
+    <script type="text/javascript" src="amcharts/pie.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script src="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="jquery-jvectormap-1.2.2/jquery-jvectormap-us-aea-en.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+</html></body>
+</html>
